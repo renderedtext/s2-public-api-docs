@@ -28,11 +28,11 @@ Creates new Schedule resource based on given yaml definition.
 POST /schedules
 ```
 
-Parameters:
+Body parameters:
 
 | Name           |  Type  | Description                                     |
 |----------------|:------:|-------------------------------------------------|
-| yml_definition | string | Content of yaml file with schedule's definition |
+| yml_definition | string | **Required.** Content of yaml file with schedule's definition |
 
 Example of yml_definition content:
 ```
@@ -64,11 +64,11 @@ Uses same endpoint as for create action, and exact action is inferred on backend
 POST /schedules
 ```
 
-Parameters:
+Body parameters:
 
 | Name           |  Type  | Description                                     |
 |----------------|:------:|-------------------------------------------------|
-| yml_definition | string | Content of yaml file with schedule's definition |
+| yml_definition | string | **Required.** Content of yaml file with schedule's definition |
 
 Example of yml_definition content:
 ```
@@ -97,16 +97,16 @@ Status: 200 OK
 Returns paginated list of existing Schedule resources which match give search parameters.
 
 ```
-GET /schedules
+GET /schedules?<query parameters>
 ```
 
-Parameters:
+Query parameters:
 
-| Name       |  Type   | Description                                      |
-|------------|:-------:|--------------------------------------------------|
-| project_id | string  | Id of project which schedules should be returned |
-| page       | integer | Serial number of wanted page with schedules      |
-| page_size  | integer | Number of schedules per page of List response    |
+| Name       |  Type   | Description                                                |
+|------------|:-------:|------------------------------------------------------------|
+| project_id | string  | **Required.** Id of project which schedules should be returned |
+| page       | integer | Serial number of wanted page with schedules                |
+| page_size  | integer | Number of schedules per page of List response              |
 
 
 Response:
@@ -146,11 +146,11 @@ Returned description contains schedule's description and also it's latest 10 tri
 GET /schedules/<identifier>
 ```
 
-Parameters:
+Path parameters:
 
 | Name       |  Type  | Description                                               |
 |------------|:------:|-----------------------------------------------------------|
-| identifier | string | Either name or id of schedule which description is wanted |
+| identifier | string | **Required.** Either name or id of schedule which description is wanted |
 
 
 Response if schedule is found:
@@ -202,11 +202,11 @@ Deletes existing Schedule resource with given id or name.
 DELETE /schedules/<identifier>
 ```
 
-Parameters:
+Path parameters:
 
 | Name       |  Type  | Description                                           |
 |------------|:------:|-------------------------------------------------------|
-| identifier | string | Either name or id of schedule which should be deleted |
+| identifier | string | **Required.** Either name or id of schedule which should be deleted |
 
 
 Response if schedule is found and deleted:
