@@ -102,9 +102,11 @@ GET /schedules
 
 Parameters:
 
-| Name       |  Type  | Description                                           |
-|------------|:------:|-------------------------------------------------------|
-| identifier | string | Either name or id of schedule which should be deleted |
+| Name       |  Type   | Description                                      |
+|------------|:-------:|--------------------------------------------------|
+| project_id | string  | Id of project which schedules should be returned |
+| page       | integer | Serial number of wanted page with schedules      |
+| page_size  | integer | Number of schedules per page of List response    |
 
 
 Response:
